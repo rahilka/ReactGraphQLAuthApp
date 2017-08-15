@@ -8,6 +8,7 @@ import { ApolloProvider } from 'react-apollo';	//ApolloProvider is the glue betw
 import { Router, hashHistory, Route, IndexRoute } from 'react-router';
 
 import App from './components/App';
+import LoginForm from './components/LoginForm';
 
 const networkInterface = createNetworkInterface({	//in order to make apollo send cookies wit every single query that it makes to the backend
 	uri: './graphql',
@@ -26,6 +27,7 @@ const Root = () => {
   	<ApolloProvider client={client}>
 	    <Router history={hashHistory}>
 	    	<Route path="/" component={App}></Route>
+	    	<Route path="login" component={LoginForm}></Route>
 	    </Router>
 	</ApolloProvider>
   );
