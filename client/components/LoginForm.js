@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import AuthForm from './AuthForm';
+import query from '../queries/CurrentUser';
 
 class LoginForm extends Component {
 	
 	onSubmit({ email, password }) {
 		this.props.mutate({
-			variables: { email, password }
+			variables: { email, password },
+			refetchQueries: [{ query }]
 		});
 	}
 
